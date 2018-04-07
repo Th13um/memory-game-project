@@ -107,3 +107,13 @@ document.body.addEventListener("click", function(e) {
     }
   }
 });
+
+// Restart game function
+
+const restartButton = document.getElementsByClassName("restart")[0];
+
+function restartGame() {
+  document.location.reload();
+}
+
+restartButton.addEventListener("click", restartGame);

@@ -43,6 +43,7 @@ function updateMoveCount() {
   } else {
     document.getElementById("moves").innerHTML = moveCount + " moves";
   }
+  adjustStars();
 }
 
 function matchCards() {
@@ -82,14 +83,14 @@ function faceUpCard(e) {
 }
 
 document.body.addEventListener("click", function(e) {
-
-  let classMatch = e.target.querySelector("i").className;
-  let matchedCards = [];
-
   if (e.target.classList.contains("hidden")) {
     if (document.querySelectorAll(".hidden").length == 16 && moveCount === 0) {
       console.log(newList);
     }
+
+      let classMatch = e.target.querySelector("i").className;
+      let matchedCards = [];
+
     if (visibleCard.length < 1) {
       revealCard(e);
       faceUpCard(e);
@@ -117,3 +118,19 @@ function restartGame() {
 }
 
 restartButton.addEventListener("click", restartGame);
+
+// Stars rating system
+
+let starRating = document.getElementsByClassName("stars")[0];
+let starCount = "3 stars";
+
+function adjustStars() {
+  if (moveCount > 10) {
+    starRating.innerHTML = "<li><i class='fas fa-star'></i></li><li><i class='fas fa-star'></i></li><li><i class='far fa-star'></i></li>";
+    starCount = "2 stars";
+  }
+  if (moveCount > 20) {
+    starRating.innerHTML = "<li><i class='fas fa-star'></i></li><li><i class='far fa-star'></i></li><li><i class='far fa-star'></i></li>";
+    starCount = "1 star";
+  }
+}

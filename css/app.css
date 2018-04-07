@@ -17,8 +17,8 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
-    font-family: 'Coda', cursive;
+  background: #fff url('../img/geometry2.png');
+  font-family: 'Roboto', 'Open Sans', sans-serif;
 }
 
 .container {
@@ -71,6 +71,27 @@ h1 {
     cursor: default;
 }
 
+.hidden {
+  transition: 0.01s ease-in-out;
+}
+
+.hidden:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 1px #f5ff50, 0 0 0 7px #faffa0, 0 19px 38px #000, 0 15px 12px #555;
+}
+
+.hidden:active {
+  transform: scale(1.2);
+  background: #f6ffff;
+  box-shadow: 0 19px 38px #000, 0 15px 12px #555;
+}
+
+.deck .card.match {
+  cursor: default;
+  background: #02ccba;
+  font-size: 40px;
+}
+
 .deck .card.show {
     font-size: 33px;
 }
@@ -81,6 +102,9 @@ h1 {
     font-size: 33px;
 }
 
+#deck .wrong {
+  background-color: #f00;
+}
 /*
  * Styles for the Score Panel
  */

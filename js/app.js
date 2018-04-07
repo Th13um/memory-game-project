@@ -44,6 +44,7 @@ function updateMoveCount() {
     document.getElementById("moves").innerHTML = moveCount + " moves";
   }
   adjustStars();
+  victory();
 }
 
 function matchCards() {
@@ -161,4 +162,30 @@ function startCount() {
 function stopCount() {
   clearTimeout(time);
   timerOn = 0;
+}
+
+// Victory
+
+function victoryAlert() {
+  sweetAlert({
+      title: "Good job!",
+      text: "You finish in " + (seconds - 1) + "s with " + starCount,
+      icon: "success",
+      buttons: ["Cancel", "Restart ?"]
+
+    })
+    .then((restart) => {
+      if (restart) {
+        restartGame();
+      } else {
+        swal("Have a nice day!");
+      }
+    });
+}
+
+function victory() {
+  if (matchedCount === 8) {
+    stopCount();
+    victoryAlert();
+  }
 }

@@ -85,7 +85,9 @@ function faceUpCard(e) {
 document.body.addEventListener("click", function(e) {
   if (e.target.classList.contains("hidden")) {
     if (document.querySelectorAll(".hidden").length == 16 && moveCount === 0) {
-      console.log(newList);
+
+      const cards = document.getElementsByClassName("card");
+      cards.onClick = startCount();
     }
 
       let classMatch = e.target.querySelector("i").className;
@@ -133,4 +135,30 @@ function adjustStars() {
     starRating.innerHTML = "<li><i class='fas fa-star'></i></li><li><i class='far fa-star'></i></li><li><i class='far fa-star'></i></li>";
     starCount = "1 star";
   }
+}
+
+// Timer
+
+let seconds = 0;
+let time;
+let timerOn = 0;
+
+function countTime() {
+  timer.innerHTML = seconds;
+  seconds += 1;
+  time = setTimeout(function() {
+    countTime();
+  }, 1000);
+}
+
+function startCount() {
+  if (!timerOn) {
+    timerOn = 1;
+    countTime();
+  }
+}
+
+function stopCount() {
+  clearTimeout(time);
+  timerOn = 0;
 }

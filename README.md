@@ -1,20 +1,27 @@
 # Memory Game Project
 
-## Table of Contents
+This is the project n°2 of the Google Udacity Front end nanodegree : The Memory Game.
 
-* [Instructions](#instructions)
-* [Contributing](#contributing)
+(This is the remake of my first repository that I have unintentionally erased by wanting to delete another.)
 
-## Instructions
+## Resources used to create the game:
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+### Starter code:
 
-To get started, open `js/app.js` and start building out the app's functionality
+- <https://github.com/udacity/fend-project-memory-game>
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+### Array shuffle:
 
-## Contributing
+- <http://stackoverflow.com/questions/2450976/>
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+### Timer
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+- <https://jsfiddle.net/Daniel_Hug/pvk6p/>
+
+### Modal
+
+- <https://sweetalert.js.org/>
+
+### Font
+
+- <https://fontawesome.com/icons?d=gallery>

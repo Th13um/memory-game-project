@@ -37,6 +37,10 @@ h1 {
   text-shadow: 2px 2px 8px #000;
 }
 
+#moves{
+  margin-right: 10px;
+}
+
 /* Styles for the deck of cards*/
 
 .deck {
@@ -54,10 +58,9 @@ h1 {
 }
 
 .deck .card {
-  height: auto;
-  width: auto;
-  min-width: 68px;
-  margin: 1%;
+  height: 48px;
+  width: 48px;
+  margin: 1px;
   background: #2e3d49;
   font-size: 0;
   color: #fff;
@@ -71,7 +74,6 @@ h1 {
 
 .deck .card:after {
   content: "";
-  padding-top: 100%;
 }
 
 .deck .card.open {
@@ -136,9 +138,25 @@ h1 {
 
 /*Style for  the responsive design*/
 
-@media only screen and (min-width: 440px) {
+@media only screen and (min-width: 315px) {
+  .deck .card {
+    min-width: 60px;
+    min-height: 60px;
+  }
+}
+
+@media only screen and (min-width: 370px) {
+  .deck .card {
+    min-width: 70px;
+    min-height: 70px;
+  }
+}
+
+@media only screen and (min-width: 415px) {
   .deck .card {
     min-width: 80px;
+    min-height: 80px;
+    margin: 4px;
   }
   .deck .card.match {
     font-size: 60px;
@@ -151,6 +169,7 @@ h1 {
 @media only screen and (min-width: 507px) {
   .deck .card {
     min-width: 100px;
+    min-height: 100px;
   }
 }
 
@@ -163,6 +182,8 @@ h1 {
   }
   .deck .card {
     min-width: 120px;
+    min-height: 120px;
+    margin: 7px;
   }
 }
 

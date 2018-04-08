@@ -13,6 +13,8 @@ function shuffle(array) {
   return array;
 }
 
+// function to shuffle the deck
+
 const cardList = document.getElementsByClassName('card');
 const newCardList = Array.prototype.slice.call(cardList);
 const shuffledCard = shuffle(newCardList);
@@ -36,6 +38,8 @@ let visibleCard = [];
 let displayedCards;
 let moveCount = 0;
 
+// Function to count the move, udapte the star and verify if win
+
 function updateMoveCount() {
   moveCount += 1;
   if (moveCount <= 1) {
@@ -47,6 +51,8 @@ function updateMoveCount() {
   victory();
 }
 
+// Function to verify if cards match
+
 function matchCards() {
   setTimeout(function() {
     matchingCards = document.querySelectorAll('.show');
@@ -56,6 +62,8 @@ function matchCards() {
   }, 500);
   matchedCount += 1;
 }
+
+// Wrong match and hide function
 
 function hideCards() {
   visibleCard = [];
@@ -80,6 +88,8 @@ function faceUpCard(e) {
   let classMatch = e.target.querySelector('i').className;
   visibleCard.push(classMatch);
 }
+
+// Game process function: click on the map, reveal it, check if it is identical and mask it otherwise
 
 document.body.addEventListener('click', function(e) {
   if (e.target.classList.contains('hidden')) {
@@ -135,7 +145,7 @@ function adjustStars() {
   }
 }
 
-// Timer
+// Stopwatch function
 
 let seconds = 0;
 let time;
@@ -149,6 +159,8 @@ function countTime() {
   }, 1000);
 }
 
+// function to start the stopwatch
+
 function startCount() {
   if (!timerOn) {
     timerOn = 1;
@@ -156,12 +168,14 @@ function startCount() {
   }
 }
 
+// function to stop the stopwatch
+
 function stopCount() {
   clearTimeout(time);
   timerOn = 0;
 }
 
-// Victory
+// Victory alert
 
 function victoryAlert() {
   sweetAlert({
@@ -180,6 +194,7 @@ function victoryAlert() {
     });
 }
 
+// End game function
 function victory() {
   if (matchedCount === 8) {
     stopCount();
